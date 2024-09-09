@@ -10,9 +10,7 @@ const Auth = () => {
 		dispatch(authActions.login());
 	};
 
-	const logoutHandler = () => {
-		dispatch(authActions.logout());
-	};
+	
 
 	return (
 		<main className={classes.auth}>
@@ -27,7 +25,6 @@ const Auth = () => {
 						<input type="password" id="password" />
 					</div>
 					{!isAuthenticated && <button onClick={loginHandler}>Login</button>}
-					{isAuthenticated && <button onClick={logoutHandler}>Logout</button>}
 				</form>
 			</section>
 		</main>
