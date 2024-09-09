@@ -1,9 +1,31 @@
 import { createStore } from "redux";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialData = {
 	counter: 0,
 	showCounter: true,
 };
+
+createSlice({
+	name: "counter",
+	initialState: initialData,
+	reducers: {
+		methods: {
+			increment(state) {
+				state.counter++;
+			},
+			decrement(state) {
+				state.counter--;
+			},
+			increase(state, action) {
+				state.counter = state.counter + action.amount;
+			},
+			toggleCounter(state) {
+				state.showCounter = !state.showCounter;
+			},
+		},
+	},
+});
 
 const counterReducer = (state = initialData, action) => {
 	switch (action.type) {
