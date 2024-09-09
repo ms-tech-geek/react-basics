@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { authActions } from "../store";
+import { authActions } from "../store/authSlice";
 import classes from "./Auth.module.css";
 
 const Auth = () => {
@@ -9,8 +9,6 @@ const Auth = () => {
 	const loginHandler = () => {
 		dispatch(authActions.login());
 	};
-
-	
 
 	return (
 		<main className={classes.auth}>
